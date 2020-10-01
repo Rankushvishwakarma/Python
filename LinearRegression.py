@@ -24,9 +24,10 @@ for i in range(TRAIN_SET_COUNT):
 predictor = LinearRegression(n_jobs=-1) #Create a linear regression object NOTE n_jobs = the number of jobs to use for computation, -1 means use all processors
 predictor.fit(X=TRAIN_INPUT, y=TRAIN_OUTPUT)  #fit the linear model (approximate a target function)
 
-X_TEST = [[10,20,30]] #Create our testing data set, the ouput should be 10*10 + 2*20 + 3*30 = 230
-outcome = predictor.predict(X=X_TEST) # Predict the ouput of the test data using the linear model
+X_test = [[10,20,30]] #Create our testing data set, the ouput should be 10*10 + 2*20 + 3*30 = 230
+outcome = predictor.predict(X=X_test) # Predict the ouput of the test data using the linear model
 
 coefficients = predictor.coef_  #The estimated coefficients for the linear regression problem.
 
+#printing the outcome and coefficient values on X_test
 print('Outcome: {} \n Coefficients: {}'.format(outcome, coefficients))
